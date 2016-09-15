@@ -116,6 +116,7 @@ get_args (int *err)
   currentpos = -1; // Começa fora da lista, entra na lista no primeiro
   // argumento.
 
+  *err = ERR_OK; // Reseta o valor de erro.
   // Enquanto não terminar de ler a linha de comando, lê mais um
   // caracter e trata ele.
   while (m != END)
@@ -211,4 +212,15 @@ free_args (char **args)
     free(*(args++));
 
   free(original);
+}
+
+int
+args_len (char **args)
+{
+  int l = 0;
+
+  while (*(args++) != NULL)
+    l++;
+
+  return l;
 }

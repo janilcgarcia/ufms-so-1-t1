@@ -1,16 +1,18 @@
 #ifndef _ARQUIVOS_H_
 #define _ARQUIVOS_H_
 
-void criar_arquivo(char *args);
-void adiciona_conteudo(char *args);
-void remove_arquivo(char *args);
+#include "shell.h"
 
-void lock_arquivo(char *args);
-void free_arquivo(char *args);
+void criar_arquivo (shell_ctx_t *ctx, char **args);
+void adiciona_conteudo (shell_ctx_t *ctx, char **args);
+void remove_arquivo (shell_ctx_t *ctx, char **args);
 
-void kill_processo(char *args);
-void leak_bytes(char *args);
+void lock_arquivo (shell_ctx_t *ctx, char **args);
+void free_arquivo (shell_ctx_t *ctx, char **args);
 
-void meminfo(char *args);
+void kill_processo (shell_ctx_t *ctx, char **args);
+void leak_bytes (shell_ctx_t *ctx, char **args);
+
+void meminfo (shell_ctx_t *ctx, char **args);
 
 #endif /* _ARQUIVOS_H_ */

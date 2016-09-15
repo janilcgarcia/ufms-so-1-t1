@@ -1,12 +1,12 @@
 #include "comandos.h"
 #include <string.h>
 
-comando_fn procurar_comando(comando_t *lst, int len, char *nome, int nome_len)
+comando_fn procurar_comando(comando_t *lst, int len, char *nome)
 {
   int i;
   
   for (i = 0; i < len; i++) {
-    if (strncmp(lst[i].nome, nome, nome_len) == 0)
+    if (strcmp(lst[i].nome, nome) == 0)
       return lst[i].comando;
   }
 

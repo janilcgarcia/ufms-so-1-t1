@@ -1,6 +1,7 @@
 #ifndef _ARGS_H_
 #define _ARGS_H_
 
+#define ERR_OK 0
 #define ERR_QUOTE 1
 
 /**
@@ -18,5 +19,7 @@ char **get_args(int *err);
  * @param args Lista de argumentos a ser desalocada.
  */
 void free_args(char **args);
+
+int args_len(char **args);
 
 #endif /* _ARGS_H_ */
